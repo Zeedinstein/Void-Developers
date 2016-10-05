@@ -12,3 +12,10 @@ require('classes/Controller.php');
 // TODO: write models and work out the database connection (Firebase or standard SQL?)
 require('classes/Model.php');
 require('classes/Message.php');
+
+$bootstrap = new Bootstrap($_GET);
+$controller = $bootstrap->createController();
+
+if ($controller) {
+	$controller->executeAction();
+}
